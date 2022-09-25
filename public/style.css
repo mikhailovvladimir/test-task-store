@@ -1,0 +1,15 @@
+.сontent {
+    margin: 100px auto 0 auto;
+    width: 80%;
+}
+
+.products {
+    width: 20%;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    float: left;
+}
+
+.error {
+    color: red;
+}
