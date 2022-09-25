@@ -12,8 +12,8 @@ try {
     $route->start();
 } catch (NotFoundPage $e) {
     $view = new Render(__DIR__ . '/../src/TestTask/View/');
-    $view->getHtmlPage('errors/404.php', ['error' => $e->getMessage()], 404);
+    $view->getHtmlPage('errors/404.php', [], 404);
 } catch (Throwable $e) {
     $view = new Render(__DIR__ . '/../src/TestTask/View/');
-    $view->getHtmlPage('errors/500.php', ['error' => $e->getMessage()], 500);
+    $view->getHtmlPage('errors/500.php', [], 500);
 }
