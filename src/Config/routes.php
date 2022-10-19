@@ -1,8 +1,11 @@
 <?php
+use TestTask\Controllers\Admin;
+use TestTask\Controllers\Product;
+use TestTask\Controllers\Main;
 
 return [
-    '~^admin/products$~' => [\TestTask\Controllers\Admin::class, 'getAllProducts'],
-    '~^admin/add-product$~' => [\TestTask\Controllers\Admin::class, 'addProduct'],
-    '~^product/(\d+)$~' => [\TestTask\Controllers\Product::class, 'getOneProduct'],
-    '~^$~' => [\TestTask\Controllers\Main::class, 'index'],
+    '~^admin/products$~' => [Admin::class, 'getAllProducts'],
+    '~^admin/add-product$~' => [Admin::class, 'addProduct'],
+    '~^product/(\d+)$~' => [Product::class, 'getOneProduct'],
+    '~^$~' => [Main::class, 'index']
 ];
