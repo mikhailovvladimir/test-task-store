@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\RequestHandler;
+namespace Core\UrlHandler;
 
 use Core\Exceptions\NotFoundPage;
 

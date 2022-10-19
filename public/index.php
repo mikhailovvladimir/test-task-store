@@ -4,7 +4,7 @@ spl_autoload_register(function (string $className) {
 });
 
 use Core\Exceptions\NotFoundPage;
-use Core\RequestHandler\Route;
+use Core\UrlHandler\Route;
 use Core\View\Render;
 
 try {

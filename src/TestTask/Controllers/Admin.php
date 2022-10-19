@@ -5,6 +5,7 @@ namespace TestTask\Controllers;
 use Core\Controller\BaseController;
 use Core\Exceptions\InvalidRow;
 use Core\Exceptions\NotFoundPage;
+use Core\InputHandler\Validation;
 use TestTask\Models\Category;
 use TestTask\Models\Product;
 
@@ -17,10 +18,20 @@ class Admin extends BaseController
             $category = new Category();
             $categories = $category->getAllCategories();
             if (!empty($_POST)) {
-                $message = $product->add($category);
+                $validation = new Validation();
+                $validation->getFormValidator()->setRules([
+                        'name' => 'name',
+                        'nameRow' => 'Имя',
+                        'rules' => [
+                            'required',
+                            'max[10]',
+                            'min[2]'
+                        ]
+                    ]);
             }
+
             $this->render->getHtmlPage('admin/add-product.php', [
-                'message' => $message,
+//                'message' => $message,
                 'categories' => $categories
             ]);
         } catch (InvalidRow $exception) {
